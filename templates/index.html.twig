@@ -1,0 +1,34 @@
+{% extends "bases/base.html.twig" %}
+
+{% block title %}Select What you want{% endblock %}
+
+{% block body %}
+    <main>
+        <section name="selection">
+            <article>
+                <input type="button" value="Playing with form" title="Playing with form" hx-get="/playing-with-form" hx-swap="innerHTML"
+                    hx-target="#content">
+
+                <div>
+                    <input type="button" value="Get raw data from REST Countries API" title="Get raw data from REST Countries API"
+                        hx-get="https://restcountries.com/v3.1/name/brazil" hx-swap="innerHTML" hx-target="#content" hx-indicator="#indicator">
+
+                    <input type="button" value="Data processed data from REST Countries API" title="Get processed data from REST Countries API"
+                        hx-get="/processed-rest-api" hx-swap="innerHTML" hx-target="#content" hx-indicator="#indicator">
+                </div>
+
+                <div>
+                    <input type="button" value="Get raw data from JSON placeholder API" title="Get raw data from JSON placeholder API"
+                        hx-get="https://jsonplaceholder.typicode.com/users" hx-swap="innerHTML" hx-target="#content" hx-indicator="#indicator">
+
+                    <input type="button" value="Data processed data from JSON placeholder API" title="Get processed data from JSON placeholder API"
+                        hx-get="/processed-json-api" hx-swap="innerHTML" hx-target="#content" hx-indicator="#indicator">
+                </div>
+            </article>
+        </section>
+        <section name="content" id="content">
+            <p style="font-family: monospace; font-size: larger; font-weight: bold; text-transform: uppercase;">Select an option above</p>
+        </section>
+        <div id="indicator" class="htmx-indicator">Loading...</div>
+    </main>
+{% endblock %}

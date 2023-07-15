@@ -1,3 +1,18 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+  path: /
+  controller: App\Controller\DefaultController::index
+
+playing_with_form:
+  path: /playing-with-form
+  methods: ['GET']
+  controller: App\Controller\DefaultController::playingWithForm
+
+processed_rest_api:
+  path: /processed-rest-api
+  methods: ['GET']
+  controller: App\Controller\DefaultController::processedRestApi
+
+processed_json_api:
+  path: /processed-json-api
+  methods: ['GET']
+  controller: App\Controller\DefaultController::processedJsonApi

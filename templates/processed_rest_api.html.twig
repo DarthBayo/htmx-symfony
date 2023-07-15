@@ -1,0 +1,29 @@
+{% extends "bases/base.html.twig" %}
+
+{% block body %}
+    <article>
+        <header>
+            <div>
+                <label for="country-common-name">Common name:</label>
+                <h1 id="country-common-name">{{ data.name.common }} {{ data.flag }}</h1>
+            </div>
+
+            <div>
+                <label for="country-official-name">Official name:</label>
+                <h2 id="country-official-name">{{ data.name.official }}</h2>
+            </div>
+
+            <div>
+                <label for="country-cioc">CIOC:</label>
+                <h4 id="country-cioc">{{ data.cioc }}</h4>
+            </div>
+        </header>
+        <img src="{{data.flags.png}}" alt="{{data.flags.alt}}">
+
+        <ul>
+            {% for lang in data.translations %}
+                <li>{{ lang.common }} - {{ lang.official }}</li>
+            {% endfor %}
+        </ul>
+    </article>
+{% endblock %}

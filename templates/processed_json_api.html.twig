@@ -1,0 +1,22 @@
+{% extends "bases/base.html.twig" %}
+
+{% block body %}
+    {% for person in data %}
+        <article>
+            <header>
+                <label for="name">Person name:</label>
+                <h1 id="name">{{ person.name }}</h1>
+            </header>
+
+            <div>
+                <label for="username">Username:</label>
+                <p id="username">{{ person.username }}</p>
+            </div>
+
+            <div>
+                <label for="email">E-mail:</label>
+                <p id="email">{{ person.email }}</p>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}
